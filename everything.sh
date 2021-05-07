@@ -8,14 +8,18 @@
 function ctrl_c() {
         dialog --title "Confirmation" --yesno "Are you sure to exit?" 10 40
 
-		menuitem=$(<"${INPUT}")
-
-		# make decsion 
-		case $menuitem in
-			yes) exit;;
-			no) ;;
+		#Get exit status
+		# 0 means user hit [yes] button.
+		# 1 means user hit [no] button.
+		# 255 means user hit [Esc] key.
+		response=$?
+		case $response in
+			0) echo exit;;
+			1) ;;
+			255) ;;
 		esac
 }
+
 #trap 'ctrl_c' SIGINT SIGQUIT SIGTSTP
 trap "ctrl_c" 2
 
