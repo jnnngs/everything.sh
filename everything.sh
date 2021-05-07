@@ -24,6 +24,7 @@ trap "rm $OUTPUT; rm $INPUT; exit" SIGHUP SIGINT SIGTERM
 #
 function runWireguard(){
 	bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
+	read -n 1 -s -r -p "Press any key to continue"
 
 }
 #
@@ -31,13 +32,16 @@ function runWireguard(){
 #
 function runHarden(){
 	bash <(wget -q -O - https://harden.sh/harden.sh)
+	read -n 1 -s -r -p "Press any key to continue"
 }
 #
 # Purpose - display a calendar
 #
 function runRDP(){
 	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
+	read -n 1 -s -r -p "Press any key to continue"
 }
+
 #
 # set infinite loop
 #
