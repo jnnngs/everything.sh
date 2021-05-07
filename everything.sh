@@ -22,25 +22,21 @@ trap "rm $OUTPUT; rm $INPUT; exit" SIGHUP SIGINT SIGTERM
 #  $2 -> set msgbox width
 #  $3 -> set msgbox title
 #
-function display_output(){
-	local h=${1-10}			# box height default 10
-	local w=${2-41} 		# box width default 41
-	local t=${3-Output} 	# box title 
-	dialog --backtitle "everything.sh" --title "${t}" --clear --msgbox "$(<$OUTPUT)" ${h} ${w}
+function Wireguard(){
+	bash <(wget -O - https://wireguard.sh/wireguard.sh)
+
 }
 #
 # Purpose - display current system date & time
 #
-function show_date(){
-	echo "Today is $(date) @ $(hostname -f)." >$OUTPUT
-    display_output 6 60 "Date and Time"
+function Harden(){
+	bash <(wget -q -O - https://harden.sh/harden.sh)
 }
 #
 # Purpose - display a calendar
 #
-function show_calendar(){
-	cal >$OUTPUT
-	display_output 13 25 "Calendar"
+function xRDP(){
+	cash <(wget -q -O - https://xRDP.sh/xrdp.sh)
 }
 #
 # set infinite loop
@@ -52,9 +48,9 @@ do
 dialog --clear  --backtitle "Mega awesome collection of everything bash" \
 --title "everything.sh Main Menu" \
 --menu "Please select an option below." 15 50 4 \
-Date/time "Displays date and time" \
-Calendar "Displays a calendar" \
-Editor "Start a text editor" \
+Wireguard "Install Wireguard VPN" \
+Harden "Harden a newly installed Linux OS" \
+xRDP "Install RDP features" \
 Exit "Exit to the shell" 2>"${INPUT}"
 
 menuitem=$(<"${INPUT}")
