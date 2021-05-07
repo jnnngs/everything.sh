@@ -22,21 +22,21 @@ trap "rm $OUTPUT; rm $INPUT; exit" SIGHUP SIGINT SIGTERM
 #  $2 -> set msgbox width
 #  $3 -> set msgbox title
 #
-function Wireguard(){
-	. bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
+function runWireguard(){
+	bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
 
 }
 #
 # Purpose - display current system date & time
 #
-function Harden(){
-	. bash <(wget -q -O - https://harden.sh/harden.sh)
+function runHarden(){
+	bash <(wget -q -O - https://harden.sh/harden.sh)
 }
 #
 # Purpose - display a calendar
 #
-function xRDP(){
-	. bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
+function runxRDP(){
+	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
 }
 #
 # set infinite loop
@@ -58,10 +58,10 @@ menuitem=$(<"${INPUT}")
 
 # make decsion 
 case $menuitem in
-	DWireguard) Wireguard;;
-	Harden) Harden;;
-	xRDP) xRDP;;
-	Exit) clear; echo "Bye"; break;;
+	Wireguard) runWireguard;;
+	Harden) runHarden;;
+	xRDP) runxRDP;;
+	Exit) clear; echo "Thanks for using everything.sh"; break;;
 esac
 
 done
