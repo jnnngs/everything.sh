@@ -9,7 +9,6 @@
 function ctrl_c() {
         dialog --title "Confirmation" --yesno "Are you sure to exit?" 10 40
 
-
 		menuitem=$(<"${INPUT}")
 
 		# make decsion 
