@@ -14,7 +14,7 @@ function ctrl_c() {
 		# 255 means user hit [Esc] key.
 		response=$?
 		case $response in
-			0) echo exit;;
+			0) clear; echo "Thanks for using everything.sh"; break;;
 			1) ;;
 			255) ;;
 		esac
@@ -62,25 +62,25 @@ function runRDP(){
 while true
 do
 
-### display main menu ###
-dialog --backtitle "Mega awesome collection of everything.sh bash" \
---title "Main Menu" \
---menu "Please select an option below." 15 50 4 \
-Wireguard "Install Wireguard VPN" \
-Harden "Harden a newly installed Linux OS" \
-RDP "Install Remote Desktop (xRDP)" \
-Exit "Exit to the shell" 2>"${INPUT}"
+	### display main menu ###
+	dialog --backtitle "Mega awesome collection of everything.sh bash" \
+	--title "Main Menu" \
+	--menu "Please select an option below." 15 50 4 \
+	Wireguard "Install Wireguard VPN" \
+	Harden "Harden a newly installed Linux OS" \
+	RDP "Install Remote Desktop (xRDP)" \
+	Exit "Exit to the shell" 2>"${INPUT}"
 
-menuitem=$(<"${INPUT}")
+	menuitem=$(<"${INPUT}")
 
 
-# make decsion 
-case $menuitem in
-	Wireguard) runWireguard;;
-	Harden) runHarden;;
-	RDP) runRDP;;
-	Exit) trap - SIGINT SIGQUIT SIGTSTP;clear; echo "Thanks for using everything.sh"; break;;
-esac
+	# make decsion 
+	case $menuitem in
+		Wireguard) runWireguard;;
+		Harden) runHarden;;
+		RDP) runRDP;;
+		Exit) clear; echo "Thanks for using everything.sh"; break;;
+	esac
 
 done
 
