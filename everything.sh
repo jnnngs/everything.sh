@@ -4,7 +4,7 @@
 
 # trap ctrl-c and call ctrl_c()
 # capture CTRL+C, CTRL+Z and quit singles using the trap
-trap 'ctrl_c' SIGINT SIGQUIT SIGTSTP
+#trap 'ctrl_c' SIGINT SIGQUIT SIGTSTP
 
 function ctrl_c() {
         dialog --title "Confirmation" --yesno "Are you sure to exit?" 10 40
@@ -18,6 +18,8 @@ function ctrl_c() {
 			no) ;;
 		esac
 }
+
+trap "ctrl_c" 2
 
 echo 'export NCURSES_NO_UTF8_ACS=1' >> ~/.bashrc
 
