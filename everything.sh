@@ -1,6 +1,10 @@
 #!/bin/bash
 # everything.sh
 # Store menu options selected by the user
+echo 'export NCURSES_NO_UTF8_ACS=1' >> ~/.bashrc
+
+sudo apt-get -qq -y install dialog
+
 INPUT=/tmp/menu.sh.$$
 
 # Storage file for displaying cal and date command output
