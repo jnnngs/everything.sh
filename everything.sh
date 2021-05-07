@@ -14,7 +14,7 @@ function ctrl_c() {
 		# 255 means user hit [Esc] key.
 		response=$?
 		case $response in
-			0) clear; echo "Thanks for using everything.sh"; break;;
+			0) clear; echo "Thanks for using everything.sh"; exit;;
 			1) ;;
 			255) ;;
 		esac
