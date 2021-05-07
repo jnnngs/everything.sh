@@ -27,8 +27,13 @@ echo 'export NCURSES_NO_UTF8_ACS=1' >> ~/.bashrc
 
 sudo apt-get -qq -y install dialog
 
+INPUT=/tmp/menu.sh.$$
+# Storage file for displaying cal and date command output
+OUTPUT=/tmp/output.sh.$$
 # get text editor or fall back to vi_editor
 vi_editor=${EDITOR-vi}
+# trap and delete temp files
+trap "rm $OUTPUT; rm $INPUT; exit" SIGHUP SIGINT SIGTERM
 
 #
 # Purpose - display output using msgbox 
