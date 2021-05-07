@@ -49,12 +49,9 @@ while true
 do
 
 ### display main menu ###
-dialog --clear  --help-button --backtitle "everything.sh" \
---title "[ M A I N - M E N U ]" \
---menu "You can use the UP/DOWN arrow keys, the first \n\
-letter of the choice as a hot key, or the \n\
-number keys 1-9 to choose an option.\n\
-Choose the TASK" 15 50 4 \
+dialog --clear  --backtitle "Mega awesome collection of everything bash" \
+--title "everything.sh Main Menu" \
+--menu "Please select an option below." 15 50 4 \
 Date/time "Displays date and time" \
 Calendar "Displays a calendar" \
 Editor "Start a text editor" \
