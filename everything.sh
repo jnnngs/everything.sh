@@ -45,8 +45,8 @@ while true
 do
 
 ### display main menu ###
-dialog --clear  --backtitle "Mega awesome collection of everything bash" \
---title "everything.sh Main Menu" \
+dialog --clear  --backtitle "Mega awesome collection of everything.sh bash" \
+--title "Main Menu" \
 --menu "Please select an option below." 15 50 4 \
 Wireguard "Install Wireguard VPN" \
 Harden "Harden a newly installed Linux OS" \
