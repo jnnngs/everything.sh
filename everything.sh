@@ -23,20 +23,20 @@ trap "rm $OUTPUT; rm $INPUT; exit" SIGHUP SIGINT SIGTERM
 #  $3 -> set msgbox title
 #
 function Wireguard(){
-	bash <(wget -O - https://wireguard.sh/wireguard.sh)
+	. bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
 
 }
 #
 # Purpose - display current system date & time
 #
 function Harden(){
-	bash <(wget -q -O - https://harden.sh/harden.sh)
+	. bash <(wget -q -O - https://harden.sh/harden.sh)
 }
 #
 # Purpose - display a calendar
 #
 function xRDP(){
-	cash <(wget -q -O - https://xRDP.sh/xrdp.sh)
+	. bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
 }
 #
 # set infinite loop
@@ -58,10 +58,10 @@ menuitem=$(<"${INPUT}")
 
 # make decsion 
 case $menuitem in
-	Date/time) show_date;;
-	Calendar) show_calendar;;
-	Editor) $vi_editor;;
-	Exit) echo "Bye"; break;;
+	DWireguard) Wireguard;;
+	Harden) Harden;;
+	xRDP) xRDP;;
+	Exit) clear; echo "Bye"; break;;
 esac
 
 done
