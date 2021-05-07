@@ -35,7 +35,7 @@ function runHarden(){
 #
 # Purpose - display a calendar
 #
-function runxRDP(){
+function runRDP(){
 	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
 }
 #
@@ -50,7 +50,7 @@ dialog --clear  --backtitle "Mega awesome collection of everything.sh bash" \
 --menu "Please select an option below." 15 50 4 \
 Wireguard "Install Wireguard VPN" \
 Harden "Harden a newly installed Linux OS" \
-xRDP "Install RDP features" \
+RDP "Install Remote Desktop (xRDP)" \
 Exit "Exit to the shell" 2>"${INPUT}"
 
 menuitem=$(<"${INPUT}")
@@ -60,7 +60,7 @@ menuitem=$(<"${INPUT}")
 case $menuitem in
 	Wireguard) runWireguard;;
 	Harden) runHarden;;
-	xRDP) runxRDP;;
+	RDP) runRDP;;
 	Exit) clear; echo "Thanks for using everything.sh"; break;;
 esac
 
