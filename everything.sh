@@ -3,7 +3,8 @@
 # Store menu options selected by the user
 
 # trap ctrl-c and call ctrl_c()
-trap ctrl_c INT
+# capture CTRL+C, CTRL+Z and quit singles using the trap
+trap 'ctrl_c' SIGINT SIGQUIT SIGTSTP
 
 function ctrl_c() {
         dialog --title "Confirmation" --yesno "Are you sure to exit?" 10 40
@@ -82,7 +83,7 @@ case $menuitem in
 	Wireguard) runWireguard;;
 	Harden) runHarden;;
 	RDP) runRDP;;
-	Exit) clear; echo "Thanks for using everything.sh"; break;;
+	Exit) trap - SIGINT SIGQUIT SIGTSTP;clear; echo "Thanks for using everything.sh"; break;;
 esac
 
 done
