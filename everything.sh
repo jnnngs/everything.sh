@@ -1,6 +1,23 @@
 #!/bin/bash
 # everything.sh
 # Store menu options selected by the user
+
+# trap ctrl-c and call ctrl_c()
+trap ctrl_c INT
+
+function ctrl_c() {
+        dialog --title "Confirmation" --yesno "Are you sure to exit?" 10 40
+
+
+		menuitem=$(<"${INPUT}")
+
+		# make decsion 
+		case $menuitem in
+			yes) exit;;
+			no) ;;
+		esac
+}
+
 echo 'export NCURSES_NO_UTF8_ACS=1' >> ~/.bashrc
 
 sudo apt-get -qq -y install dialog
