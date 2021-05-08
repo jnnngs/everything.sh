@@ -40,6 +40,91 @@ OUTPUT=/tmp/output.sh.$$
 #  $2 -> set msgbox width
 #  $3 -> set msgbox title
 #
+function runBenchmark(){
+	#
+	# set infinite loop
+	#
+	while true
+	do
+
+		### display main menu ###
+		dialog --backtitle "Benchmark" \
+		--title "Main Menu" \
+		--menu "Please select an option below." 15 50 4 \
+		USA "Benchmark & The US Speedtest" \
+		Europe "Benchmark & Europe Speedtest" \
+		MiddleEast  "Benchmark & Middle East Speedtest" \
+		India "IBenchmark & India Speedtest" \
+		Asia "Benchmark & Asia Speedtest" \
+		Australia "Benchmark & Australia Speedtest" \
+		SouthAmerica "Benchmark & South America Speedtest" \
+		Exit "Exit to the shell" 2>"${INPUT}"
+
+		menuitem=$(<"${INPUT}")
+
+
+		# make decsion 
+		case $menuitem in
+			USA) runUSA;;
+			Europe) runEurope;;
+			MiddleEast) runMiddleEast;;
+			India) runIndia;
+			Asia) runAsia;;
+			Australia) runAustralia;;
+			SouthAmerica) runSouthAmerica;;
+			Exit) clear; echo "Thanks for using everything.sh"; break;;
+		esac										
+
+	done
+
+}
+function runUSA(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -us
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runEurope(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -eu
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runMiddleEast(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -me
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runIndia(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -in
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runAsia(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -asia
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runAustralia(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -au
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runSouthAmerica(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -sa
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
+}
+function runUSA(){
+	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
+	read -n 1 -s -r -p "Press any key to continue"
+
+}
 function runWireguard(){
 	bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
 	read -n 1 -s -r -p "Press any key to continue"
@@ -70,9 +155,10 @@ do
 	dialog --backtitle "Mega awesome collection of everything.sh bash" \
 	--title "Main Menu" \
 	--menu "Please select an option below." 15 50 4 \
-	Wireguard "Install Wireguard VPN" \
+	Benchmark "Perform a Benchmark test" \
 	Harden "Harden a newly installed Linux OS" \
 	RDP "Install Remote Desktop (xRDP)" \
+	Wireguard "Install Wireguard VPN" \
 	Exit "Exit to the shell" 2>"${INPUT}"
 
 	menuitem=$(<"${INPUT}")
@@ -80,9 +166,10 @@ do
 
 	# make decsion 
 	case $menuitem in
-		Wireguard) runWireguard;;
+		Benchmark) runBenchmark;;
 		Harden) runHarden;;
 		RDP) runRDP;;
+		Wireguard) runWireguard;;
 		Exit) clear; echo "Thanks for using everything.sh"; break;;
 	esac
 
