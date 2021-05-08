@@ -51,7 +51,7 @@ function runBenchmark(){
 		### display main menu ###
 		dialog --backtitle "Benchmark" \
 		--title "Main Menu" \
-		--menu "Please select an option below." 15 65 8 \
+		--menu "Please select an option below." 15 60 8 \
 		USA "Benchmark & The US Speedtest" \
 		Europe "Benchmark & Europe Speedtest" \
 		MiddleEast  "Benchmark & Middle East Speedtest" \
@@ -160,7 +160,7 @@ do
 	### display main menu ###
 	dialog --backtitle "Mega awesome collection of everything.sh bash" \
 	--title "Main Menu" \
-	--menu "Please select an option below." 15 65 5 \
+	--menu "Please select an option below." 15 60 5 \
 	Benchmark "Perform a Benchmark test" \
 	Harden "Harden a newly installed Linux OS" \
 	RDP "Install Remote Desktop (xRDP)" \
