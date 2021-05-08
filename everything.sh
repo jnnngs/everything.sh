@@ -168,7 +168,7 @@ do
 	### display main menu ###
 	dialog --backtitle "Mega awesome collection of everything.sh bash" \
 	--title "Main Menu" \
-	--menu "Please select an option below." 15 60 5 \
+	--menu "Please select an option below." 15 60 6 \
 	Benchmark "Perform a Benchmark test" \
 	Harden "Harden a newly installed Linux OS" \
 	OhMyBASH! "Your terminal never felt this good before" \
