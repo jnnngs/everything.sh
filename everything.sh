@@ -84,48 +84,43 @@ function runUSA(){
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
+
 function runEurope(){
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -eu
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
+
 function runMiddleEast(){
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -me
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
+
 function runIndia(){
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -in
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
+
 function runAsia(){
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -asia
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
+
 function runAustralia(){
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -au
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
+
 function runSouthAmerica(){
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -sa
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
-}
-function runUSA(){
-	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
-	read -n 1 -s -r -p "Press any key to continue"
 
-}
 function runWireguard(){
 	bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
 	read -n 1 -s -r -p "Press any key to continue"
