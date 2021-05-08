@@ -154,7 +154,7 @@ function runRDP(){
 	read -n 1 -s -r -p "Press any key to continue"
 }
 
-function hMyBASH!(){
+function runohMyBASH!(){
 	clear
 	bash <(wget -q -O - https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)
 	read -n 1 -s -r -p "Press any key to continue"
@@ -183,7 +183,7 @@ do
 	case $menuitem in
 		Benchmark) runBenchmark;;
 		Harden) runHarden;;
-		hMyBASH!) runhMyBASH!;;
+		hMyBASH!) runohMyBASH!;;
 		RDP) runRDP;;
 		Wireguard) runWireguard;;
 		Exit) clear; echo "Thanks for using everything.sh"; break;;
