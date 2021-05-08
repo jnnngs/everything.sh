@@ -59,7 +59,7 @@ function runBenchmark(){
 		Asia "Benchmark & Asia Speedtest" \
 		Australia "Benchmark & Australia Speedtest" \
 		SouthAmerica "Benchmark & South America Speedtest" \
-		Exit "Exit to the shell" 2>"${INPUT}"
+		Exit "Return to Main Menu" 2>"${INPUT}"
 
 		menuitem=$(<"${INPUT}")
 
@@ -80,48 +80,56 @@ function runBenchmark(){
 
 }
 function runUSA(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -us
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runEurope(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -eu
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runMiddleEast(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -me
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runIndia(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -in
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runAsia(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -asia
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runAustralia(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -au
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runSouthAmerica(){
+	clear
 	curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -sa
 	read -n 1 -s -r -p "Press any key to continue"
 
 }
 
 function runWireguard(){
+	clear
 	bash <(wget -q -O - https://wireguard.sh/wireguard.sh)
 	read -n 1 -s -r -p "Press any key to continue"
 
@@ -130,6 +138,7 @@ function runWireguard(){
 # Purpose - display current system date & time
 #
 function runHarden(){
+	clear
 	bash <(wget -q -O - https://harden.sh/harden.sh)
 	read -n 1 -s -r -p "Press any key to continue"
 }
@@ -137,6 +146,7 @@ function runHarden(){
 # Purpose - display a calendar
 #
 function runRDP(){
+	clear
 	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
 	read -n 1 -s -r -p "Press any key to continue"
 }
