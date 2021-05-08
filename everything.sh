@@ -24,6 +24,7 @@ function ctrl_c() {
 trap "ctrl_c" 2
 
 echo 'export NCURSES_NO_UTF8_ACS=1' >> ~/.bashrc
+export NCURSES_NO_UTF8_ACS=1
 
 sudo apt-get -qq -y install dialog
 
