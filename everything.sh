@@ -69,7 +69,7 @@ function runBenchmark(){
 			USA) runUSA;;
 			Europe) runEurope;;
 			MiddleEast) runMiddleEast;;
-			India) runIndia;
+			India) runIndia;;
 			Asia) runAsia;;
 			Australia) runAustralia;;
 			SouthAmerica) runSouthAmerica;;
