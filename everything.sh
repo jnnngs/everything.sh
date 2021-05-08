@@ -154,6 +154,11 @@ function runRDP(){
 	read -n 1 -s -r -p "Press any key to continue"
 }
 
+function hMyBASH!(){
+	clear
+	bash <(wget -q -O - https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)
+	read -n 1 -s -r -p "Press any key to continue"
+}
 #
 # set infinite loop
 #
@@ -166,6 +171,7 @@ do
 	--menu "Please select an option below." 15 60 5 \
 	Benchmark "Perform a Benchmark test" \
 	Harden "Harden a newly installed Linux OS" \
+	OhMyBASH! "Your terminal never felt this good before" \
 	RDP "Install Remote Desktop (xRDP)" \
 	Wireguard "Install Wireguard VPN" \
 	Exit "Exit to the shell" 2>"${INPUT}"
@@ -177,6 +183,7 @@ do
 	case $menuitem in
 		Benchmark) runBenchmark;;
 		Harden) runHarden;;
+		hMyBASH!) runhMyBASH!;;
 		RDP) runRDP;;
 		Wireguard) runWireguard;;
 		Exit) clear; echo "Thanks for using everything.sh"; break;;
