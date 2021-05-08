@@ -51,7 +51,7 @@ function runBenchmark(){
 		### display main menu ###
 		dialog --backtitle "Benchmark" \
 		--title "Main Menu" \
-		--menu "Please select an option below." 25 50 10 \
+		--menu "Please select an option below." 25 50 8 \
 		USA "Benchmark & The US Speedtest" \
 		Europe "Benchmark & Europe Speedtest" \
 		MiddleEast  "Benchmark & Middle East Speedtest" \
