@@ -16,5 +16,7 @@
 <br/>
 <span id="a">everything.sh</span>:<span id="b">~</span><span id="c">$</span> cat about.txt
 <div id="c">everything.sh is a single file zero config shell script to be run to install and configure everything on Ubuntu. everything.sh aims to set a sensible baseline which can be built upon for specific needs.</div>
-<span id="a">everything.sh</span>:<span id="b">~</span><span id="c">$</span> cat credits.txt
+<span id="a">everything.sh</span>:<span id="b">~</span><span id="c">$</span> cat included.txt
+<div id="c">Benchmark, Harden OS, xRDP & Wireshark VPN/Tunnel(s).</div>
+
 <div>exit</div>
