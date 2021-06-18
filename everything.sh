@@ -150,7 +150,7 @@ function runHarden(){
 #
 function runRDP(){
 	clear
-	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
+	bash <(wget -O - https://xRDP.sh/xrdp.sh) -s -l
 	read -n 1 -s -r -p "Press any key to continue"
 }
 
