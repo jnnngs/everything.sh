@@ -146,7 +146,7 @@ function runHarden(){
 	read -n 1 -s -r -p "Press any key to continue"
 }
 #
-# Purpose - display a calendar
+# Purpose - runRDP
 #
 function runRDP(){
 	clear
@@ -154,9 +154,18 @@ function runRDP(){
 	read -n 1 -s -r -p "Press any key to continue"
 }
 
+#
+# Purpose - runGuacamole
+#
+function runGuacamole(){
+	clear
+	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
+	read -n 1 -s -r -p "Press any key to continue"
+}
+
 function runohMyBASH!(){
 	clear
-	bash <(wget -q -O - https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)
+	bash <(wget -O - https://raw.githubusercontent.com/MysticRyuujin/guac-install/master/guac-install.sh)
 	read -n 1 -s -r -p "Press any key to continue"
 }
 #
@@ -173,6 +182,7 @@ do
 	Harden "Harden a newly installed Linux OS" \
 	OhMyBASH! "Your terminal never felt this good before" \
 	RDP "Install Remote Desktop (xRDP)" \
+	Guacamole "Install Guacamole (HTML5 RDP Client)" \
 	Wireguard "Install Wireguard VPN" \
 	Exit "Exit to the shell" 2>"${INPUT}"
 
@@ -183,8 +193,9 @@ do
 	case $menuitem in
 		Benchmark) runBenchmark;;
 		Harden) runHarden;;
-		hMyBASH!) runohMyBASH!;;
+		MyBASH!) runohMyBASH!;;
 		RDP) runRDP;;
+		Guacamole ) runGuacamole;;
 		Wireguard) runWireguard;;
 		Exit) clear; echo "Thanks for using everything.sh"; break;;
 	esac
