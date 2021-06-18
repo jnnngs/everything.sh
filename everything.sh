@@ -159,15 +159,10 @@ function runRDP(){
 #
 function runGuacamole(){
 	clear
-	bash <(wget -q -O - https://xRDP.sh/xrdp.sh)
-	read -n 1 -s -r -p "Press any key to continue"
-}
-
-function runohMyBASH!(){
-	clear
 	bash <(wget -O - https://raw.githubusercontent.com/MysticRyuujin/guac-install/master/guac-install.sh)
 	read -n 1 -s -r -p "Press any key to continue"
 }
+
 #
 # set infinite loop
 #
@@ -180,7 +175,6 @@ do
 	--menu "Please select an option below." 15 60 6 \
 	Benchmark "Perform a Benchmark test" \
 	Harden "Harden a newly installed Linux OS" \
-	OhMyBASH! "Your terminal never felt this good before" \
 	RDP "Install Remote Desktop (xRDP)" \
 	Guacamole "Install Guacamole (HTML5 RDP Client)" \
 	Wireguard "Install Wireguard VPN" \
@@ -193,7 +187,6 @@ do
 	case $menuitem in
 		Benchmark) runBenchmark;;
 		Harden) runHarden;;
-		MyBASH!) runohMyBASH!;;
 		RDP) runRDP;;
 		Guacamole ) runGuacamole;;
 		Wireguard) runWireguard;;
